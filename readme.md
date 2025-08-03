@@ -5,7 +5,7 @@
 ![NumPy](https://img.shields.io/badge/NumPy-013243?logo=numpy&logoColor=white&style=flat)
 ![Pillow](https://img.shields.io/badge/Pillow-8F2D4D?logo=pillow&logoColor=white&style=flat)
 
-# Pooping Dogs Telegram Bot 🐕💩
+# Pooping Dogs Telegram Bot 🐕💩 @PoopingDogs_bot
 
 Телеграм-бот для сбора фотографий собак в процессе дефекации с целью обучения нейросети для выявления недобросовестных хозяев.
 
