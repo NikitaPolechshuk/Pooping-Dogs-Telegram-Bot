@@ -398,7 +398,7 @@ def handle_photo(message):
         file_info = bot.get_file(file_id)
         file_extension = file_info.file_path.split(".")[-1]
         random_str = generate_random_string()  # Генерируем случайную строку
-        file_name = f"photo_{user_id}_{int(current_time)}_{random_str}.{file_extension}"  # Добавляем случайную строку
+        file_name = f"photo_{user_id}_{int(current_time)}_{random_str}.{file_extension}"
         file_path = os.path.join(IMAGES_DIR, file_name)
 
         logger.debug(f"Сохранение фото: {file_name}")
