@@ -4,6 +4,8 @@ import sqlite3
 import telebot
 import logging
 import hashlib
+import random
+import string
 import numpy as np
 from telebot import types
 from dotenv import load_dotenv
@@ -64,6 +66,12 @@ class DatabaseError(Exception):
     """Кастомное исключение для ошибок БД"""
 
     pass
+
+
+def generate_random_string(length=8):
+    """Генерирует случайную строку из букв и цифр"""
+    characters = string.ascii_letters + string.digits
+    return ''.join(random.choice(characters) for _ in range(length))
 
 
 def is_dog_on_image(image_path):
@@ -389,7 +397,8 @@ def handle_photo(message):
         file_id = message.photo[-1].file_id
         file_info = bot.get_file(file_id)
         file_extension = file_info.file_path.split(".")[-1]
-        file_name = f"photo_{user_id}_{int(current_time)}.{file_extension}"
+        random_str = generate_random_string()  # Генерируем случайную строку
+        file_name = f"photo_{user_id}_{int(current_time)}_{random_str}.{file_extension}"  # Добавляем случайную строку
         file_path = os.path.join(IMAGES_DIR, file_name)
 
         logger.debug(f"Сохранение фото: {file_name}")
